@@ -16,10 +16,6 @@ public class U5D2W1Application {
 
   public static void configurationClass() {
     AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext((U5D2W1Application.class));
-
-//    Menu menu = (Menu) ctx.getBean("getMenu");
-
-//    System.out.println(menu.toString().replaceAll("[,\\[\\]]", ""));
     Order order = (Order) ctx.getBean("order_component");
 
     System.out.println(order);
