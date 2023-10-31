@@ -22,5 +22,6 @@ public class U5D2W1Application {
 //    System.out.println(menu.toString().replaceAll("[,\\[\\]]", ""));
     Order order = (Order) ctx.getBean("order_component");
 
+    System.out.println(order);
   }
 }
