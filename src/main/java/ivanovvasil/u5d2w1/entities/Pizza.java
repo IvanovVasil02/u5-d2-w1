@@ -5,7 +5,7 @@ import lombok.Getter;
 import java.util.List;
 
 @Getter
-public class Pizza extends MenuProduct {
+public class Pizza extends MenuProduct implements OrderProduct {
   private final List<Topping> ingredients;
 
   public Pizza(String name, long cal, double price, List<Topping> ingredients) {

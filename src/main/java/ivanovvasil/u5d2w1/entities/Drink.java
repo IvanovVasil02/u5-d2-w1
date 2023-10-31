@@ -3,7 +3,7 @@ package ivanovvasil.u5d2w1.entities;
 import lombok.Getter;
 
 @Getter
-public class Drink extends MenuProduct{
+public class Drink extends MenuProduct implements OrderProduct {
   private double quantity;
   private double alcholPercent;
 
@@ -11,6 +11,7 @@ public class Drink extends MenuProduct{
     super(name, cal, price);
     this.quantity = quantity;
   }
+
   public Drink(String name, long cal, double price, double quantity, double alcholPercent) {
     super(name, cal, price);
     this.quantity = quantity;

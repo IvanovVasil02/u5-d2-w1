@@ -16,7 +16,7 @@ import java.util.List;
 @PropertySource("application.properties")
 public class Order {
   private int ordernumber;
-  private List<MenuProduct> order;
+  private List<OrderProduct> order;
   private OrderStatus orderStatus;
   private int coversNumber;
   private LocalTime time;
@@ -24,7 +24,7 @@ public class Order {
   @Value("${cost.covered}")
   private int cover;
 
-  public Order(List<MenuProduct> order) {
+  public Order(List<OrderProduct> order) {
     this.order = order;
     this.orderStatus = OrderStatus.SERVED;
     this.coversNumber = 4;
@@ -33,7 +33,7 @@ public class Order {
   }
 
   public double getAmount() {
-    return this.order.stream().mapToDouble(MenuProduct::getPrice).sum() + (this.cover * coversNumber);
+    return this.order.stream().mapToDouble(OrderProduct::getPrice).sum() + (this.cover * coversNumber);
   }
 
 }
