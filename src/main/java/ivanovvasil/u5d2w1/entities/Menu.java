@@ -2,8 +2,11 @@ package ivanovvasil.u5d2w1.entities;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
+
+@Component("menu_component")
 @AllArgsConstructor
 @Getter
 public class Menu {
@@ -13,9 +16,9 @@ public class Menu {
 
   @Override
   public String toString() {
-    return "Menu" + "\n"+
-            "Pizzas" +"\n"+ listaPizze +"\n"+
-            "Toppings"+"\n" + listaToppings +"\n"+"\n"+
-            "Drinks"+"\n" + listaDrink;
+    return "Menu" + "\n" +
+            "Pizzas" + "\n" + listaPizze + "\n" +
+            "Toppings" + "\n" + listaToppings + "\n" + "\n" +
+            "Drinks" + "\n" + listaDrink;
   }
 }

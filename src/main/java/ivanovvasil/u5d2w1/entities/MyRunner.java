@@ -10,7 +10,7 @@ public class MyRunner implements CommandLineRunner {
   @Override
   public void run(String... args) throws Exception {
     AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext((U5D2W1Application.class));
-    Menu menu = (Menu) ctx.getBean("getMenu");
+    Menu menu = (Menu) ctx.getBean("menu_component");
     System.out.println(menu.toString().replaceAll("[,\\[\\]]", ""));
   }
 }

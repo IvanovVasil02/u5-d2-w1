@@ -23,6 +23,6 @@ public class Drink extends MenuProduct implements OrderProduct {
     return this.getName() +
             "(" + quantity +
             "l, " + alcholPercent +
-            "%) " + "\n";
+            "%) " + " " + this.getPrice() + "\n";
   }
 }

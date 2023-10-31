@@ -1,10 +1,10 @@
 package ivanovvasil.u5d2w1;
 
 import ivanovvasil.u5d2w1.entities.*;
+import ivanovvasil.u5d2w1.enums.OrderStatus;
 import ivanovvasil.u5d2w1.enums.TableStatus;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Primary;
 
 import java.util.Arrays;
 import java.util.List;
@@ -80,22 +80,25 @@ public class BeansConfiguration {
   }
 
   @Bean
-  @Primary
   Table getTable2() {
-    return new Table(2, 7, TableStatus.LIBERO);
+    return new Table(2, 7, TableStatus.OCCUPATO);
   }
 
   @Bean
-  List<MenuProduct> getOrderList() {
-    return Arrays.asList(margheritaPizza(), salamiPizza(), lemonade(), wine());
+  Table getTable3() {
+    return new Table(3, 4, TableStatus.OCCUPATO);
+  }
+
+
+  @Bean
+  Order getOrder1() {
+    return new Order(getTable2(), Arrays.asList(hawaiianPizza(), margheritaPizza(), lemonade(), wine()), OrderStatus.SERVED, 5);
   }
 
   @Bean
-  Menu getMenu() {
-    List<Pizza> pizzaList = Arrays.asList(margheritaPizza(), hawaiianPizza(), salamiPizza());
-    List<Topping> toppings = Arrays.asList(cheese(), ham(), onion(), pineapple(), salami());
-    List<Drink> drinkList = Arrays.asList(lemonade(), water(), wine());
-    return new Menu(pizzaList, toppings, drinkList);
+  Order getOrder2() {
+    return new Order(getTable1(), Arrays.asList(salamiPizza(), margheritaPizza(), lemonade(), lemonade()), OrderStatus.IN_PROGRESS, 5);
   }
+
 
 }
