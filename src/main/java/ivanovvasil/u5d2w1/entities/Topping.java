@@ -1,4 +1,4 @@
-package ivanovvasil.u5d1w1.entities;
+package ivanovvasil.u5d2w1.entities;
 
 
 public class Topping extends MenuProduct{

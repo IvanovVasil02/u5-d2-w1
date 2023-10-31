@@ -1,8 +1,6 @@
-package ivanovvasil.u5d1w1.entities;
+package ivanovvasil.u5d2w1.entities;
 
-import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.ToString;
 
 @Getter
 public class Drink extends MenuProduct{
