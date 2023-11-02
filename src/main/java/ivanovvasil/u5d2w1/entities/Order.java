@@ -3,10 +3,10 @@ package ivanovvasil.u5d2w1.entities;
 import ivanovvasil.u5d2w1.enums.OrderStatus;
 import lombok.Getter;
 import lombok.ToString;
+import org.springframework.beans.factory.annotation.Value;
 
 import java.time.LocalTime;
 import java.util.List;
-
 
 @ToString
 @Getter
@@ -18,8 +18,9 @@ public class Order {
   private int coversNumber;
   private LocalTime time;
   private double totalAmount;
-
+  @Value("${cost.covered}")
   private int cover;
+
 
   public Order(Table table, List<OrderProduct> order, OrderStatus orderStatus, int coversNumber) {
     this.ordernumber = (int) Math.floor(Math.random() * 101);
@@ -32,7 +33,7 @@ public class Order {
   }
 
   public double getAmount() {
-    return this.order.stream().mapToDouble(OrderProduct::getPrice).sum() + (2 * coversNumber);
+    return this.order.stream().mapToDouble(OrderProduct::getPrice).sum() + (this.cover * coversNumber);
   }
 
 }
